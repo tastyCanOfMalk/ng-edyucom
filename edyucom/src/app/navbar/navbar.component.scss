@@ -1,0 +1,43 @@
+@use "/src/styles.scss" as *;
+
+.navbar {
+  background-color: $navbar-color;
+  & .navbar-brand {
+    margin: 0 0 0 1rem;
+  }
+}
+.page-navigation {
+  & .nav-link {
+    font-size: $nav-font-size;
+    margin-right: 1rem;
+  }
+}
+.social-icons {
+  & .nav-link {
+    font-size: $nav-font-size;
+    & span {
+      display: none;
+    }
+  }
+  & .ng-fa-icon {
+    margin-right: 1rem;
+  }
+}
+.navbar-collapse.show {
+  & .social-icons {
+    & .ng-fa-icon {
+      float: inline-end;
+      margin-right: 1rem;
+      padding-top: 8px;
+      // background-color: greenyellow;
+    }
+    & span {
+      padding-top: 8px;
+      display: inline-block;
+      font-size: $nav-font-size;
+      visibility: visible;
+      // background-color: aqua;
+    }
+    // background-color: green;
+  }
+}

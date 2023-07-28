@@ -1,0 +1,14 @@
+.page-navigation .nav-link {
+  font-size: 1.2rem;
+  background-color: pink;
+  margin-right: 1rem;
+}
+
+.social-icons .nav-link {
+  font-size: 1.2rem;
+  background-color: lightblue;
+}
+.social-icons .ng-fa-icon {
+  margin-left: 1rem;
+  background-color: white;
+}/*# sourceMappingURL=navbar.component.css.map */

@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="assets/navbar/logo.png" alt="ed-yu.com" class="src" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav container justify-content-center page-navigation">
+          <a class="nav-link" href="#home">Home</a>
+          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="#projects">Projects</a>
+      </div>
+      <div class="navbar-nav social-icons">
+        <a class="nav-link" href="#">
+          <span>LinkedIn</span>
+          <fa-icon [icon]="faLinkedinIn"></fa-icon>
+        </a>
+        <a class="nav-link" href="#">
+          <span>Github</span>
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+        <a class="nav-link" href="#">
+          <span>Email</span>
+          <fa-icon [icon]="faAt"></fa-icon>
+        </a>
+        <a class="nav-link" href="#">
+          <span>Resume</span>
+          <fa-icon [icon]="faFileLines"></fa-icon>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
