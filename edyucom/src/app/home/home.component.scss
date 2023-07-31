@@ -1,0 +1,49 @@
+@use "/src/styles.scss" as *;
+
+#home-map {
+  height: 50vh;
+}
+// .map-container {
+//   height: 40vh;
+// }
+
+.container-fluid .row {
+  height: 25vh;
+}
+
+// screen smaller than max-width, change image size and div spacing
+@media screen and (max-width: 540px) {
+  .self-portrait {
+    max-width: 200px;
+    max-height: 200px;
+  }
+  .container-fluid .row {
+    height: 20vh;
+  }
+}
+
+.self-portrait {
+  border-radius: 50%;
+  filter: grayscale(100%);
+
+  &:hover {
+    transition: all 150ms;
+    filter: grayscale(0%);
+  }
+}
+
+h1 {
+  font-family: $headline-font-family;
+  font-weight: 800;
+  @include font-size(5rem);
+
+  & span.hello {
+    color: $navbar-hover-color;
+  }
+}
+
+h2 {
+  font-family: $headline-font-family;
+  font-weight: 200;
+  @include font-size(3rem);
+}
