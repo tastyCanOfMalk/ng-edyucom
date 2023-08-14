@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { imageOverlay } from 'leaflet';
 
 @Component({
   selector: 'app-projects',
@@ -10,13 +11,14 @@ export class ProjectsComponent {
     {
       title: 'Project 1',
       description: 'This is the description of Project 1.',
-      imagePath: 'path/to/image1.jpg',
+      imagePath: "https://picsum.photos/id/1020/250/250"
     },
     {
       title: 'Project 2',
       description: 'This is the description of Project 2.',
-      imagePath: 'path/to/image2.jpg',
+      imagePath: "https://picsum.photos/id/598/250/250"
     },
     // Add more project objects as needed
+
   ];
 }

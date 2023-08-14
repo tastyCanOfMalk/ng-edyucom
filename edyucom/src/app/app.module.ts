@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SinglePageHomeComponent } from './single-page-home/single-page-home.component';
+import { MapComponent } from './about/map/map.component';
+
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
@@ -19,7 +21,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     AboutComponent,
     ProjectsComponent,
     SinglePageHomeComponent,
-
+    MapComponent,
   ],
   imports: [
     BrowserModule,

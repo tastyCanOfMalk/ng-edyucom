@@ -1,3 +1,46 @@
+@import "node_modules/leaflet/dist/leaflet.css";
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import "../node_modules/rfs/scss";
+
+// IMAGES
+.color-on-hover {
+  filter: grayscale(100%);
+  &:hover {
+    transition: all 150ms;
+    filter: grayscale(0%);
+  }
+}
+.rounded-full{
+  border-radius: 50%;
+}
+
+
+
 // NAVBAR
+$navbar-font-size: 1.2rem;
+$navbar-icon-size: 1.1rem;
 $navbar-color: white;
-$nav-font-size: 1.1rem;
+$navbar-font-family: "Karla", sans-serif;
+$navbar-font-weight: 500;
+$navbar-hover-color: #cc4425;
+$navbar-font-color: #3e4147;
+
+// HOME
+$headline-font-family: "Outfit", sans-serif;
+
+// LEAFLET
+.leaflet-control-attribution {
+  color: rgba(180, 180, 180, 0.582);
+  & a {
+    color: rgba(180, 180, 180, 0.582);
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  & path {
+    display: none;
+  }
+}
+#home-map .leaflet-control-zoom {
+  display: none;
+}

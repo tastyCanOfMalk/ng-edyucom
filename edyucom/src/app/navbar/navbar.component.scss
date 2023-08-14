@@ -2,42 +2,54 @@
 
 .navbar {
   background-color: $navbar-color;
+  font-family: $navbar-font-family;
+  font-weight: $navbar-font-weight;
+
+  & a{
+    color: $navbar-font-color;
+  }
+
   & .navbar-brand {
     margin: 0 0 0 1rem;
   }
-}
-.page-navigation {
-  & .nav-link {
-    font-size: $nav-font-size;
-    margin-right: 1rem;
-  }
-}
-.social-icons {
-  & .nav-link {
-    font-size: $nav-font-size;
-    & span {
-      display: none;
+
+  & .page-navigation {
+    font-size: $navbar-font-size;
+    padding: 0 0 0 1rem;
+
+    & .nav-link {
+      margin: 0 1rem 0 0;
+      &:hover {
+        color: $navbar-hover-color;
+      }
     }
   }
-  & .ng-fa-icon {
-    margin-right: 1rem;
-  }
-}
-.navbar-collapse.show {
+
   & .social-icons {
+    font-size: $navbar-icon-size;
+    padding: 0 1rem 0 0;
+
+    & .nav-link {
+      &:hover {
+        color: $navbar-hover-color;
+      }
+      & span {
+        display: none;
+        padding: 0 0 0 1rem;
+
+      }
+    }
+  }
+
+  & .navbar-collapse.show .social-icons {
     & .ng-fa-icon {
       float: inline-end;
-      margin-right: 1rem;
-      padding-top: 8px;
-      // background-color: greenyellow;
+      margin-right: 2rem;
     }
-    & span {
-      padding-top: 8px;
+    & .nav-link span {
+      font-size: $navbar-font-size;
       display: inline-block;
-      font-size: $nav-font-size;
-      visibility: visible;
-      // background-color: aqua;
+
     }
-    // background-color: green;
   }
 }

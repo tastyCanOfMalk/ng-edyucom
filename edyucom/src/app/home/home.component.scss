@@ -1,43 +1,46 @@
 @use "/src/styles.scss" as *;
 
-#home-map {
-  height: 50vh;
-}
-// .map-container {
-//   height: 40vh;
-// }
-
 .container-fluid .row {
   height: 25vh;
 }
 
 // screen smaller than max-width, change image size and div spacing
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 576px) {
   .self-portrait {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 250px;
+    max-height: 250px;
   }
   .container-fluid .row {
-    height: 20vh;
+    height: 30vh;
+  }
+  h1 {
+    @include font-size(5rem);
+  }
+  h2 {
+    @include font-size(3rem);
   }
 }
 
-.self-portrait {
-  border-radius: 50%;
-  filter: grayscale(100%);
-
-  &:hover {
-    transition: all 150ms;
-    filter: grayscale(0%);
+@media screen and (min-width: 577px) {
+  .self-portrait {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
   }
 }
 
 h1 {
   font-family: $headline-font-family;
   font-weight: 800;
-  @include font-size(5rem);
+  // font-size: 5rem;
+  // @include font-size(5rem);
 
-  & span.hello {
+  & span {
     color: $navbar-hover-color;
   }
 }
@@ -45,5 +48,5 @@ h1 {
 h2 {
   font-family: $headline-font-family;
   font-weight: 200;
-  @include font-size(3rem);
+  // @include font-size(3rem);
 }
