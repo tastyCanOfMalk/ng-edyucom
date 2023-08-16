@@ -13,7 +13,7 @@ export class MapComponent implements OnInit {
   constructor() { }
 
   private readonly cartoTileLayerUrl = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
-  private readonly popupMessage = "I'm based out of Columbus!";
+  private readonly popupMessage = "I'm based out of Columbus, Ohio!";
   private readonly attributionText = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
   mapOptions: Leaflet.MapOptions = {};
@@ -31,7 +31,7 @@ export class MapComponent implements OnInit {
   private initializeMapOptions() {
     this.mapOptions = {
       center: Leaflet.latLng(40.04358, -83.12465),
-      zoom: 10,
+      zoom: 5,
       layers: [
         Leaflet.tileLayer(
           this.cartoTileLayerUrl, {
