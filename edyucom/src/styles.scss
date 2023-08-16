@@ -14,8 +14,6 @@
   border-radius: 50%;
 }
 
-
-
 // NAVBAR
 $navbar-font-size: 1.2rem;
 $navbar-icon-size: 1.1rem;
@@ -27,6 +25,33 @@ $navbar-font-color: #3e4147;
 
 // HOME
 $headline-font-family: "Outfit", sans-serif;
+
+// TYPOGRAPHY
+h1 {
+  font-family: $headline-font-family;
+  font-weight: 800;
+  @include font-size(5rem);
+  & span {
+    color: $navbar-hover-color;
+  }
+}
+
+h2 {
+  font-family: $headline-font-family;
+  font-weight: 200;
+  @include font-size(3rem);
+}
+
+h3 {
+  font-family: 'Zilla Slab', serif;
+  font-weight: 200;
+  @include font-size(1.5rem);
+  & span{
+    @include font-size(2.5rem);
+    font-family: $headline-font-family;
+    font-weight: 600;
+  }
+}
 
 // LEAFLET
 .leaflet-control-attribution {
@@ -41,6 +66,99 @@ $headline-font-family: "Outfit", sans-serif;
     display: none;
   }
 }
-#home-map .leaflet-control-zoom {
-  display: none;
+
+#about-map .leaflet-control-zoom {
+  display: none !important;
 }
+
+#home, #about, #projects {
+  // padding-top: 50px;
+}
+
+// #navbar{
+//   border-style: solid;
+//   border-color: black;
+//   border-width: 5px;
+// }
+
+#about{
+  border-style: solid;
+  border-color: rgb(255, 0, 170);
+  border-width: 5px;
+}
+// testing
+
+// .container-fluid{
+//   border-style: solid;
+//   border-color: rgba(255, 0, 0, 0.603);
+//   border-width: 5px;
+
+//   & .container-fluid {
+//     border-style: dashed;
+
+//     & .container-fluid {
+//       border-style: dotted;
+//     }
+//   }
+
+//   .row {
+//     border-style: solid;
+//     border-color: black;
+//     border-width: 5px;
+//     .col {
+//       border-style: solid;
+//       border-color: rgb(255, 0, 170);
+//       border-width: 5px;
+
+//     }
+//   }
+// }
+
+// #home{
+//   border-style: solid;
+//   border-color: rgba(255, 0, 0, 0.603);
+//   border-width: 5px;
+//   .row {
+//     border-style: solid;
+//     border-color: black;
+//     border-width: 5px;
+
+//     & .col {
+//       border-style: solid;
+//       border-color: rgb(255, 0, 170);
+//       border-width: 5px;
+//     }
+//   }
+// }
+// #about{
+//   border-style: solid;
+//   border-color: rgba(255, 0, 0, 0.603);
+//   border-width: 5px;
+//   .row {
+//     border-style: solid;
+//     border-color: black;
+//     border-width: 5px;
+
+//     & .col {
+//       border-style: solid;
+//       border-color: rgb(255, 0, 170);
+//       border-width: 5px;
+//     }
+//   }
+// }
+// #projects{
+//   border-style: solid;
+//   border-color: rgba(255, 0, 0, 0.603);
+//   border-width: 5px;
+//   .row {
+//     border-style: solid;
+//     border-color: black;
+//     border-width: 5px;
+
+//     & .col {
+//       border-style: solid;
+//       border-color: rgb(255, 0, 170);
+//       border-width: 5px;
+//     }
+//   }
+// }
