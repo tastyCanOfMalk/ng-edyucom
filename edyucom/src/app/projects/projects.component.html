@@ -1,12 +1,97 @@
-  <div class="row pt-3">
-    <div class="col-md-4 mb-4" *ngFor="let project of projects">
-      <div class="card">
-        <img [src]="project.imagePath" class="card-img-top" alt="{{ project.title }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ project.title }}</h5>
-          <p class="card-text">{{ project.description }}</p>
-          <a routerLink="/projects/{{ project.title }}" class="btn btn-primary">Learn More</a>
+<div class="row p-3">
+  <div class="col col-lg-3 mb-4" *ngFor="let project of projects">
+    <div class="card">
+      <div class="card-header">
+        <div class="row align-items-center">
+          <div class="col-auto me-auto project-title">
+            {{ project.title }}
+          </div>
+          <div class="col-auto">
+            <fa-icon
+              [icon]="info"
+              class="btn project-info-icon"
+              (click)="openModal(project)"
+              data-bs-toggle="modal"
+              data-bs-target="#infoModal"
+            ></fa-icon>
+          </div>
         </div>
+      </div>
+
+      <img
+        [src]="project.imagePath"
+        class="card-img-bottom"
+        alt="..."
+        class="project-hover"
+        (click)="openModal(project)"
+        data-bs-toggle="modal"
+        data-bs-target="#projectModal"
+      />
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="infoModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="card-title">{{ selectedProject?.title }}</h5>
+        <p class="card-text">{{ selectedProject?.description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="projectModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <h5 class="card-title">{{ selectedProject?.title }}</h5>
+        <p class="card-text">{{ selectedProject?.description }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

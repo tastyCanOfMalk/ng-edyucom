@@ -1,1 +1,30 @@
 @use "/src/styles.scss" as *;
+
+.project-info-icon {
+  font-size: 1em;
+  opacity: 80%;
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.project-hover {
+  transition: all $image-hover-transition-time;
+  filter: grayscale(100%);
+  opacity: 95%;
+  &:hover {
+    transition: all $image-hover-transition-time;
+    filter: grayscale(0%);
+    opacity: 80%;
+  }
+}
+
+.card-header {
+  background-color: white;
+  padding: 2px 1em 2px 1em;
+}
+
+.project-title {
+  font-family: $headline-font-family;
+  font-weight: 200;
+}

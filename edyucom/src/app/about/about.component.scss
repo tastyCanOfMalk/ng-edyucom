@@ -16,26 +16,34 @@ $about-height-bot: calc(100vh - $about-height-top - $about-height-mid - 70px);
   display: none;
 }
 
+.text-hover {
+  transition: all $image-hover-transition-time;
+  &:hover {
+    transition: all $image-hover-transition-time;
+    color: rgb(235, 96, 61);
+  }
+}
+
 #home-row-bottom, #about-map {
   height: $about-height-bot;
   overflow: hidden;
 }
 
 @media only screen and (max-width: 1280px) {
-  h3 {
+  h3{
+    @include font-size(2rem);
+  }
+  h4 {
     @include font-size(1.3rem);
-    & span{
-      @include font-size(2rem);
-    }
   }
 }
 
 @media only screen and (max-width: 768px) {
-  h3 {
+  h3{
+    @include font-size(1.5rem);
+  }
+  h4 {
     @include font-size(1.2rem);
-    & span{
-      @include font-size(1.5rem);
-    }
   }
   #home-row-middle{
     padding: 0 2em 0 2em;
@@ -43,11 +51,11 @@ $about-height-bot: calc(100vh - $about-height-top - $about-height-mid - 70px);
 }
 
 @media only screen and (max-width: 576px) {
-  h3 {
+  h3{
+    @include font-size(2rem);
+  }
+  h4 {
     @include font-size(1.4rem);
-    & span{
-      @include font-size(2rem);
-    }
   }
   #home-row-middle-small{
     display: flex;

@@ -4,12 +4,15 @@
 
 // VARS
 $accent-color: #cc4425;
+$accent-color-2: #2e2e2e8f;
+$image-hover-transition-time: 400ms;
 
 // IMAGES
 .color-on-hover {
+  transition: all $image-hover-transition-time;
   filter: grayscale(100%);
   &:hover {
-    transition: all 150ms;
+    transition: all $image-hover-transition-time;
     filter: grayscale(0%);
   }
 }
@@ -37,13 +40,20 @@ h2 {
 }
 
 h3 {
+    @include font-size(2.5rem);
+    font-family: $headline-font-family;
+    font-weight: 600;
+}
+
+h4 {
   font-family: $about-font-family;
   font-weight: 200;
   @include font-size(1.5rem);
   & span {
-    @include font-size(2.5rem);
-    font-family: $headline-font-family;
-    font-weight: 600;
+    color: $accent-color-2;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: .01em;
   }
 }
 
