@@ -1,11 +1,13 @@
 @import "node_modules/leaflet/dist/leaflet.css";
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poiret+One&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 @import "../node_modules/rfs/scss";
 
 // VARS
 $accent-color: #cc4425;
 $accent-color-2: #2e2e2e8f;
 $image-hover-transition-time: 400ms;
+$logo-hover-transition-time: 1800ms;
 
 // IMAGES
 .color-on-hover {
@@ -23,6 +25,8 @@ $image-hover-transition-time: 400ms;
 // TYPOGRAPHY
 $headline-font-family: "Outfit", sans-serif;
 $about-font-family: "Zilla Slab", serif;
+$logo-font-family: 'Poiret One', cursive;
+$navbar-font-family: "Karla", sans-serif;
 
 h1 {
   font-family: $headline-font-family;

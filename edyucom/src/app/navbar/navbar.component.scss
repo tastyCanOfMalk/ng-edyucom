@@ -4,7 +4,6 @@
 $navbar-font-size: 1.2rem;
 $navbar-icon-size: 1.1rem;
 $navbar-color: white;
-$navbar-font-family: "Karla", sans-serif;
 $navbar-font-weight: 500;
 $navbar-font-color: #3e4147;
 
@@ -13,12 +12,20 @@ $navbar-font-color: #3e4147;
   font-family: $navbar-font-family;
   font-weight: $navbar-font-weight;
 
+
   & a {
     color: $navbar-font-color;
   }
 
   & .navbar-brand {
     margin: 0 0 0 1rem;
+    font-size: 2rem;
+    font-family: $logo-font-family;
+    transition: all $logo-hover-transition-time;
+    &:hover{
+      transition: all $logo-hover-transition-time;
+      filter: drop-shadow(1px 1px 2px $accent-color);
+    }
   }
 
   & .page-navigation {

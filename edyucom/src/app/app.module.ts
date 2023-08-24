@@ -12,8 +12,6 @@ import { SinglePageHomeComponent } from './single-page-home/single-page-home.com
 import { MapComponent } from './about/map/map.component';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
-import { ProjectDetailsComponent } from './projects/project-details/project-details.component';
-import { BakerySalesComponent } from './projects/project-details/bakery-sales/bakery-sales.component';
 
 @NgModule({
   declarations: [
@@ -23,9 +21,7 @@ import { BakerySalesComponent } from './projects/project-details/bakery-sales/ba
     AboutComponent,
     ProjectsComponent,
     SinglePageHomeComponent,
-    MapComponent,
-    ProjectDetailsComponent,
-    BakerySalesComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,

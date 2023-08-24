@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <img
+      <!-- <img
         [src]="project.imagePath"
         class="card-img-bottom"
         alt="..."
@@ -26,12 +26,27 @@
         (click)="openModal(project)"
         data-bs-toggle="modal"
         data-bs-target="#projectModal"
-      />
+      /> -->
+      <a href="{{ project.link }}" target="_blank">
+        <img
+          [src]="project.imagePath"
+          alt="..."
+          class="project-hover card-img-bottom"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          data-bs-title="Tooltip on top"
+        />
+        <div class="overlay">
+          <fa-icon class="icon" [icon]="newWindow"></fa-icon>
+        </div>
+        <button type="button" class="btn btn-primary" ngbTooltip="Tooltip text">Hover me</button>
+
+      </a>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
+<!-- INFO Modal -->
 <div
   class="modal fade"
   id="infoModal"
@@ -63,7 +78,7 @@
     </div>
   </div>
 </div>
-<!-- Modal -->
+<!-- PROJECT Modal -->
 <div
   class="modal fade"
   id="projectModal"
@@ -71,10 +86,11 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog modal-xl modal-dialog-scrollable">
+  <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+
         <button
           type="button"
           class="btn-close"
@@ -85,6 +101,12 @@
       <div class="modal-body">
         <h5 class="card-title">{{ selectedProject?.title }}</h5>
         <p class="card-text">{{ selectedProject?.description }}</p>
+
+        <div class="project-container border-3 p-3">
+          <iframe src="http://ed-yu.com/projects/boardGameNodes.html">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
