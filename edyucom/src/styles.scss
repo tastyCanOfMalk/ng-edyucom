@@ -1,13 +1,14 @@
 @import "node_modules/leaflet/dist/leaflet.css";
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poiret+One&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Poiret+One&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 @import "../node_modules/rfs/scss";
 
 // VARS
 $accent-color: #cc4425;
 $accent-color-2: #2e2e2e8f;
+$tooltip-color: #463b3b;
 $image-hover-transition-time: 400ms;
 $logo-hover-transition-time: 1800ms;
+$navbar-font-color: #3e4147;
 
 // IMAGES
 .color-on-hover {
@@ -25,8 +26,9 @@ $logo-hover-transition-time: 1800ms;
 // TYPOGRAPHY
 $headline-font-family: "Outfit", sans-serif;
 $about-font-family: "Zilla Slab", serif;
-$logo-font-family: 'Poiret One', cursive;
+$logo-font-family: "Poiret One", cursive;
 $navbar-font-family: "Karla", sans-serif;
+$tags-font-family: "Zilla Slab", serif;
 
 h1 {
   font-family: $headline-font-family;
@@ -44,9 +46,9 @@ h2 {
 }
 
 h3 {
-    @include font-size(2.5rem);
-    font-family: $headline-font-family;
-    font-weight: 600;
+  @include font-size(2.5rem);
+  font-family: $headline-font-family;
+  font-weight: 600;
 }
 
 h4 {
@@ -57,8 +59,31 @@ h4 {
     color: $accent-color-2;
     font-weight: 400;
     font-style: italic;
-    letter-spacing: .01em;
+    letter-spacing: 0.01em;
   }
+}
+
+// TOOLTIPS
+.tooltip-inner {
+  background-color: $tooltip-color;
+  font-family: $navbar-font-family;
+  opacity: 90%;
+}
+.bs-tooltip-end .tooltip-arrow::before {
+  border-right-color: $tooltip-color;
+  opacity: 90%;
+}
+.bs-tooltip-start .tooltip-arrow::before {
+  border-left-color: $tooltip-color;
+  opacity: 90%;
+}
+.bs-tooltip-top .tooltip-arrow::before {
+  border-top-color: $tooltip-color;
+  opacity: 90%;
+}
+.bs-tooltip-bottom .tooltip-arrow::before {
+  border-bottom-color: $tooltip-color;
+  opacity: 90%;
 }
 
 // LEAFLET

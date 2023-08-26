@@ -1,9 +1,10 @@
-<div class="row p-3">
-  <div class="col col-lg-3 mb-4" *ngFor="let project of projects">
-    <div class="card">
-      <div class="card-header">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3">
+  
+  <div class="col mb-4" *ngFor="let project of projects">
+    <div class="card h-100">
+      <div class="card-header h-100">
         <div class="row align-items-center">
-          <div class="col-auto me-auto project-title">
+          <div class="col me-auto project-title">
             {{ project.title }}
           </div>
           <div class="col-auto">
@@ -13,34 +14,25 @@
               (click)="openModal(project)"
               data-bs-toggle="modal"
               data-bs-target="#infoModal"
+              ngbTooltip="More info"
+              placement="right auto"
+              [openDelay]="400"
+              [closeDelay]="500"
             ></fa-icon>
           </div>
         </div>
       </div>
 
-      <!-- <img
-        [src]="project.imagePath"
-        class="card-img-bottom"
-        alt="..."
-        class="project-hover"
-        (click)="openModal(project)"
-        data-bs-toggle="modal"
-        data-bs-target="#projectModal"
-      /> -->
-      <a href="{{ project.link }}" target="_blank">
+      <a href="{{ project.imageLink }}" target="_blank">
         <img
           [src]="project.imagePath"
           alt="..."
-          class="project-hover card-img-bottom"
-          data-bs-toggle="tooltip"
-          data-bs-placement="top"
-          data-bs-title="Tooltip on top"
+          class="project-hover card-img-bottom h-100"
+          ngbTooltip="Open project"
+          placement="bottom auto"
+          [openDelay]="600"
+          [closeDelay]="500"
         />
-        <div class="overlay">
-          <fa-icon class="icon" [icon]="newWindow"></fa-icon>
-        </div>
-        <button type="button" class="btn btn-primary" ngbTooltip="Tooltip text">Hover me</button>
-
       </a>
     </div>
   </div>
@@ -51,13 +43,17 @@
   class="modal fade"
   id="infoModal"
   tabindex="-1"
-  aria-labelledby="exampleModalLabel"
+  aria-labelledby="infoModal"
   aria-hidden="true"
 >
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <div class="row">
+          <div class="modal-title fs-5" id="infoModal">
+            {{ selectedProject?.title }}
+          </div>
+        </div>
         <button
           type="button"
           class="btn-close"
@@ -65,19 +61,77 @@
           aria-label="Close"
         ></button>
       </div>
+
       <div class="modal-body">
-        <h5 class="card-title">{{ selectedProject?.title }}</h5>
-        <p class="card-text">{{ selectedProject?.description }}</p>
+        <p class="lead">{{ selectedProject?.description }}</p>
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6"><hr class="separator" /></div>
+          <div class="col"></div>
+        </div>
+
+        <!-- <p>{{ selectedProject?.details }}</p> -->
+        <div [innerHTML]="selectedProject?.details"></div>
+
+        <div class="row">
+          <div class="col"></div>
+          <div class="col-6"><hr class="separator" /></div>
+          <div class="col"></div>
+        </div>
+
+        <div class="row">
+          <div class="col project-icon-links">
+            <a
+              *ngIf="selectedProject?.infoGitLink"
+              [href]="selectedProject?.infoGitLink"
+              target="_blank"
+            >
+              <fa-icon
+                class="project-icon"
+                [icon]="gitBranch"
+                ngbTooltip="Git repo"
+                placement="top auto"
+                [openDelay]="900"
+                [closeDelay]="300"
+              ></fa-icon>
+            </a>
+            <a
+              *ngIf="selectedProject?.infoProjectLink"
+              [href]="selectedProject?.infoProjectLink"
+              target="_blank"
+            >
+              <fa-icon
+                class="project-icon"
+                [icon]="newWindow"
+                ngbTooltip="Open project"
+                placement="top auto"
+                [openDelay]="900"
+                [closeDelay]="300"
+              ></fa-icon>
+            </a>
+          </div>
+        </div>
       </div>
+
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <ng-container
+          *ngFor="let tag of selectedProject?.tags; let last = last"
+        >
+          <div class="tag-item me-2">
+            {{ tag }}
+            <span *ngIf="!last"></span>
+          </div>
+        </ng-container>
+        <!-- {{ selectedProject?.tags }} -->
+        <!-- <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">
           Close
-        </button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        </button> -->
       </div>
     </div>
   </div>
 </div>
+
 <!-- PROJECT Modal -->
 <div
   class="modal fade"

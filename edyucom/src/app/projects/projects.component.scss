@@ -15,7 +15,6 @@
   &:hover {
     transition: all $image-hover-transition-time;
     filter: grayscale(0%);
-    opacity: 80%;
   }
 }
 
@@ -24,23 +23,47 @@
   padding: 2px 1em 2px 1em;
 }
 
+.modal-footer {
+  padding: 3px 1em 3px 1em;
+}
+
 .project-title {
   font-family: $headline-font-family;
   font-weight: 200;
 }
 
-// .project-container {
-//   // position:relative;
-//   // padding-bottom:56.25%;
-//   // padding-top:30px;
-//   // height:0;
-//   // overflow:hidden;
+.project-description {
+  font-family: $headline-font-family;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.tag-item {
+  font-family: $tags-font-family;
+  color: grey;
+  @include font-size(.9rem)
+}
+
+.separator {
+  opacity: .1;
+}
+
+// .project-git-square {
+//   font-size: 2em;
 // }
 
-// .project-container iframe, .project-container object, .project-container embed {
-//   position:absolute;
-//   top:0;
-//   left:0;
-//   width:100%;
-//   height:100%;
+// .project-new-window{
+//   font-size: 1.9em;
 // }
+
+.project-icon {
+  font-size: 2em;
+  padding: 0 15px 0 15px;
+  color: $navbar-font-color;
+  transition: all 500ms;
+  &:hover {
+    color: $accent-color;
+    transition: all 500ms;
+
+  }
+}

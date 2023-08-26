@@ -55,7 +55,7 @@ $about-height-bot: calc(100vh - $about-height-top - $about-height-mid - 70px);
     @include font-size(2rem);
   }
   h4 {
-    @include font-size(1.4rem);
+    @include font-size(1.1rem);
   }
   #home-row-middle-small{
     display: flex;
