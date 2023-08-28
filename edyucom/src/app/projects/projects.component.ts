@@ -30,6 +30,7 @@ export class ProjectsComponent {
       tags: ["JavaScript Game", "Clicker Game", "Bootstrap", "Front-end Development"],
       imagePath: "assets/projects/doughnuts.png",
       imageLink: "assets/projectDetails/donut.html",
+      // imageLink: "assets/projectDetails/hshots.html",
       infoProjectLink:  "assets/projectDetails/donut.html",
       infoGitLink: null,
     },

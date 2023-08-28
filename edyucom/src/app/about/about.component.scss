@@ -20,7 +20,7 @@ $about-height-bot: calc(100vh - $about-height-top - $about-height-mid - 70px);
   transition: all $image-hover-transition-time;
   &:hover {
     transition: all $image-hover-transition-time;
-    color: rgb(235, 96, 61);
+    color: $about-text-hover;
   }
 }
 
@@ -60,6 +60,10 @@ $about-height-bot: calc(100vh - $about-height-top - $about-height-mid - 70px);
   #home-row-middle-small{
     display: flex;
     padding: 0 2em 0 2em;
+    & a{
+      color: black;
+      text-decoration: none;
+    }
   }
   #home-row-middle{
     display: none;
