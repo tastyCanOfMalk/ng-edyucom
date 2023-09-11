@@ -1,41 +1,22 @@
+// project-viewer.component.ts
 import { Component, OnInit } from '@angular/core';
-import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { faCodeBranch } from '@fortawesome/free-solid-svg-icons';
-import { Project } from '../projects/project.model';
+import { ActivatedRoute } from '@angular/router';
 import { projects } from '../projects/projects-data'; // Import your projects data
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-projects',
-  templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  selector: 'app-project-viewer',
+  templateUrl: './project-viewer.component.html',
+  styleUrls: ['./project-viewer.component.scss']
 })
-
-export class ProjectsComponent implements OnInit{
-
-  info = faCircleInfo;
-  gitSquare = faGithubSquare;
-  gitBranch = faCodeBranch;
-  newWindow = faArrowUpRightFromSquare;
-
-  selectedProject: any;
-  projects: Project[] = projects;
-
+export class ProjectViewerComponent implements OnInit {
   project: any; // Define the project variable
   safeUrl: SafeResourceUrl | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer // Inject DomSanitizer
-  ) {
-    // Assign the IDs
-    projects.forEach((project, index) => {
-      project.id = index;
-    });
-  }
+  ) {}
 
   ngOnInit(): void {
     const projectIdParam = this.route.snapshot.paramMap.get('id'); // Get the parameter as string
@@ -59,14 +40,4 @@ export class ProjectsComponent implements OnInit{
 
     }
   }
-
-  openModal(project: any) {
-    this.selectedProject = project;
-    this.selectedProject.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(project.imageLink);
-  }
-
-
-
-
-
 }

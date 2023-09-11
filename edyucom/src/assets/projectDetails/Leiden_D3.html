@@ -5,7 +5,7 @@
 
   <meta charset="utf-8">
   <title>Leiden Communities D3</title>
-  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>\
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
   <script src="assets/nsfw/jLouvain.js"></script>
 
   <style>
@@ -92,6 +92,16 @@
       cursor: pointer;
     }
 
+    .link-btn {
+      background-color: blue;
+      border-radius: 10px;
+      margin-right: 15px;
+      padding: 5px;
+      color: white;
+      font-family: Arial;
+      cursor: pointer;
+    }
+
     .tooltip {
       position: absolute;
       text-align: center;
@@ -108,6 +118,12 @@
 </head>
 
 <body>
+
+  <div class='year-button-container'>
+    <a href="Leiden_RMD.html"  class="link-btn" target="_blank">Leiden RMD</a>
+    <a href="Louvain_RMD.html" class="link-btn" target="_blank">Louvain RMD</a>
+  </div>
+
   <div class='year-button-container'>
     <!-- <div class='yr2015 yr-btn'> 2015 </div> -->
     <div class='yr2016 yr-btn'> 2016 </div>
@@ -116,6 +132,7 @@
     <div class='yr2019 yr-btn'> 2019 </div>
     <div class='yr2020 yr-btn'> 2020 </div>
   </div>
+
 </body>
 
 <script>

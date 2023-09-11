@@ -1,5 +1,5 @@
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 p-3">
-  
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xxl-6 p-3">
+
   <div class="col mb-4" *ngFor="let project of projects">
     <div class="card h-100">
       <div class="card-header h-100">
@@ -19,13 +19,31 @@
         </div>
       </div>
 
-      <a href="{{ project.imageLink }}" target="_blank">
+      <a *ngIf="project.useIframe" [routerLink]="['/project', project.id]">
+      <!-- <a> -->
+        <img
+
+        [src]="project.imagePath"
+        alt="..."
+        class="project-hover card-img-bottom h-100"
+      />
+      </a>
+      <a *ngIf="!project.useIframe" [href]="project.imageLink" target="_blank">
+        <img
+        [src]="project.imagePath"
+        alt="..."
+        class="project-hover card-img-bottom h-100"
+      />
+      </a>
+
+      <!-- <a href="{{ project.imageLink }}" target="_blank">
         <img
           [src]="project.imagePath"
           alt="..."
           class="project-hover card-img-bottom h-100"
         />
-      </a>
+      </a> -->
+
     </div>
   </div>
 </div>
@@ -63,16 +81,16 @@
           <div class="col"></div>
         </div>
 
-        <!-- <p>{{ selectedProject?.details }}</p> -->
         <div [innerHTML]="selectedProject?.details"></div>
 
-        <div class="row">
+        <!-- <div class="row">
           <div class="col"></div>
           <div class="col-6"><hr class="separator" /></div>
           <div class="col"></div>
-        </div>
+        </div> -->
 
-        <div class="row">
+        <!-- Buttons to link to stuff -->
+        <!-- <div class="row">
           <div class="col project-icon-links">
             <a
               *ngIf="selectedProject?.infoGitLink"
@@ -103,7 +121,7 @@
               ></fa-icon>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="modal-footer">
@@ -147,13 +165,13 @@
       <div class="modal-body">
         <h5 class="card-title">{{ selectedProject?.title }}</h5>
         <p class="card-text">{{ selectedProject?.description }}</p>
-
-        <div class="project-container border-3 p-3">
-          <iframe src="http://ed-yu.com/projects/boardGameNodes.html">
-            <p>Your browser does not support iframes.</p>
-          </iframe>
-        </div>
+        <p>{{selectedProject?.safeUrl}}</p>
+        <p>test</p>
+        <!-- <div class="project-container border-3 p-3"> -->
+          <iframe [src]="selectedProject?.safeUrl" width="900px" height="900px"></iframe>
+        <!-- </div> -->
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
           Close

@@ -13,6 +13,7 @@ import { MapComponent } from './about/map/map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { SecretComponent } from './secret/secret.component';
 import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
+import { ProjectViewerComponent } from './project-viewer/project-viewer.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-go
     ProjectsComponent,
     SinglePageHomeComponent,
     MapComponent,
-    SecretComponent
+    SecretComponent,
+    ProjectViewerComponent,
   ],
   imports: [
     BrowserModule,

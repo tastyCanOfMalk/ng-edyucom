@@ -84,7 +84,7 @@
         .style("stroke", function (d) {
           if (d.value == 0) {
             return '#c0c1bf'
-          } //grey 
+          } //grey
           if (d.value == 1) {
             return '#05f85a'
           } //green
@@ -109,15 +109,6 @@
           } //dashed
         });
 
-      // GTUid
-      svg.append("text")
-        .attr("id", "credit")
-        .attr("x", width - 20)
-        .attr("y", 0 + 20)
-        .attr("text-anchor", "end")
-        .style("font-size", "16px")
-        .text("eyu42");
-
       // define the nodes
       var node = svg.selectAll(".node")
         .data(force.nodes())
@@ -136,7 +127,7 @@
       // console.log(node);
 
       // https://stackoverflow.com/questions/54471028/how-can-i-calculate-the-degree-of-nodes-in-d3-v5
-      // Add degree 
+      // Add degree
       d3.selectAll('g.node')
         .each(function (d) {
           d.degree = 0;
@@ -158,7 +149,7 @@
         function (d) {
           return d.degree;
         })
-      // 
+      //
 
       // create linear color gradient
       var mycolor = d3.scaleLinear()
