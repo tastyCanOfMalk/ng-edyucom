@@ -13,6 +13,10 @@ export class SecretComponent {
       title: "Headshots",
       link: "assets/projectDetails/hshots.html"
     },
+    {
+      title: "Photos",
+      link: "assets/projectDetails/photos.html"
+    },
   ]
 
 }
